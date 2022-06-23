@@ -39,38 +39,6 @@
                   <tr>
                     <td class="bg_tr text_right">行政区划:</td>
                     <td class="text_left" colspan="7" style="padding: 5px">
-                      <!-- <el-form-item style="display: inline-block">
-                        <el-select
-                          v-model="province"
-                          placeholder="请选择省"
-                          style="width: 150px"
-                          @change="provinceChange"
-                          disabled
-                        >
-                          <el-option
-                            v-for="item in provinceOptions"
-                            :key="item.orgCode"
-                            :label="item.orgName"
-                            :value="item.orgCode"
-                          ></el-option>
-                        </el-select>
-                      </el-form-item>
-                      <el-form-item prop="city" style="display: inline-block">
-                        <el-select
-                          v-model="form.city"
-                          placeholder="请选择市"
-                          style="width: 150px"
-                          :disabled="jzxs"
-                          @change="cityChange"
-                        >
-                          <el-option
-                            v-for="item in cityOptions"
-                            :key="item.orgCode"
-                            :label="item.orgName"
-                            :value="item.orgCode"
-                          ></el-option>
-                        </el-select>
-                      </el-form-item> -->
                       <el-form-item prop="county" style="display: inline-block">
                         <el-select
                           v-model="form.county"
@@ -121,22 +89,6 @@
                       </el-form-item>
                     </td>
                   </tr>
-                  <!-- <tr>
-                    <td class="bg_tr text_right">
-                      村庄名称
-                    </td>
-                    <td class="text_left" colspan="7" style="padding: 5px">
-                      <el-form-item prop="cunName">
-                        <el-input
-                          type="text"
-                          v-model.trim="form.cunName"
-                          style="width: 295px"
-                          placeholder="请输入"
-                          :disabled="fileDisabled"
-                        ></el-input>
-                      </el-form-item>
-                    </td>
-                  </tr> -->
                   <tr>
                     <td class="bg_tr text_right">村庄规划图片</td>
                     <td colspan="7" class="text_left">
@@ -147,6 +99,7 @@
                           @changefm='changefm'
                           :uploadList="imgList"
                           :index='fmIndex'
+                          :year="$route.query.year"
                           :disabled="fileDisabled"
                           type="dghy01"
                           style="margin: 12px"
@@ -477,7 +430,6 @@ export default {
         });
     },
     goBack() {
-      this.$store.commit("login/refreshCope", false)
       this.$router.back()
     },
     //设置封面id

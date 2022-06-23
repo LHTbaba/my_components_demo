@@ -1,6 +1,9 @@
 <template>
   <div class="multicom-page" v-loading="loading">
-    <div class="page-title">设为封面组件测试数据列表</div>
+    <div class="page-title">
+      <span>封面图片设置组件测试数据列表</span>
+      <el-button class="back-button" @click="goBack">返回</el-button>
+    </div>
     <div class="header-line">
       <div class="left">
         <el-date-picker
@@ -74,6 +77,9 @@ export default {
     this.$store.commit('login/refreshCope',false)
   }, 
   methods: {
+    goBack() {
+      this.$router.back()
+    },
     search() {
       this.current = 1
       this.fetchData()
@@ -143,7 +149,7 @@ export default {
         this.noMore = false
       })
       .catch(err => {
-        this.$showError(err)
+        this.$message.error(err)
       })
     },
     scroll() {
@@ -174,7 +180,7 @@ export default {
         this.dataList = this.dataList.concat(res.data.data.records)
       })
       .catch(err => {
-        this.$showError(err)
+        this.$message.error(err)
       })
     }
   }
@@ -191,6 +197,12 @@ export default {
     font-size: 40px;
     font-weight: bold;
     line-height: 84px;
+    position: relative;
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
   }
   .header-line {
     padding: 16px;

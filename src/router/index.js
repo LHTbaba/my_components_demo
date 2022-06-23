@@ -11,7 +11,7 @@ Vue.use(VueRouter)
 //设置组件映射规则
 const routes = [
   {
-    path: '/login',
+    path: '/',
     name: 'login',
     component: login
   },

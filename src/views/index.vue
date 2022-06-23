@@ -1,7 +1,7 @@
 <template>
   <div class="index-page">
     <div class="title">{{name}}</div>
-    <el-carousel :interval="2000" type="card" height="300px">
+    <el-carousel :interval="500" type="card" height="300px">
       <el-carousel-item v-for="(item, index) in picList" :key="index">
         <img class="banner-item" :src="item.url">
       </el-carousel-item>
@@ -38,11 +38,11 @@ export default {
         background: 'rgb(25, 199, 54)'
       }, {
         url: '/',
-        name: '组件测试',
+        name: 'XXX组件测试',
         background: 'rgb(235, 43, 10)'
       }, {
         url: '/',
-        name: '组件测试',
+        name: 'XXXX组件测试',
         background: 'rgb(11, 44, 233)'
       }]
     }
