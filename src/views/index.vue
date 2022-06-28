@@ -37,8 +37,8 @@ export default {
         name: '封面图片设置组件测试',
         background: 'rgb(25, 199, 54)'
       }, {
-        url: '/',
-        name: 'XXX组件测试',
+        url: '/echartsTest',
+        name: 'echarts图表测试',
         background: 'rgb(235, 43, 10)'
       }, {
         url: '/',

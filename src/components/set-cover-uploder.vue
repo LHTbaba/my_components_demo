@@ -283,7 +283,7 @@ export default {
   position: absolute;
   left: 0;
   bottom: 0;
-  z-index: 1000;
+  z-index: 9;
   width: 100%;
   text-align: center;
   height: 22px;
